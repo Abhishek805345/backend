@@ -113,7 +113,7 @@ exports.register=async (req,res,next)=>{
         You can now log in and start managing your tasks.
       </p>
 
-      <a href="https://todo.com/login" class="button">
+      <a href="https://todo-frontend-nu-lake.vercel.app/login" class="button">
         Login to Todo
       </a>
 
