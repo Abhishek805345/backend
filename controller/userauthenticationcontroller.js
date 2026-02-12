@@ -113,7 +113,7 @@ exports.register=async (req,res,next)=>{
         You can now log in and start managing your tasks.
       </p>
 
-      <a href="https://todo-frontend-nu-lake.vercel.app/login" class="button">
+      <a href="https://todo.com/login" class="button">
         Login to Todo
       </a>
 
@@ -149,12 +149,16 @@ exports.logincheck=async (req,res,next)=>{
   const data=req.body;
   try{
      const result=await outerclass.fetchuser(data.email);
-       if (data.email==result.email && data.password==result.password){
+       if (data.password===result.password){
        res.json({
         login:true,
         name:result.name,
         id:result._id
        })
+      }else{
+        res.json({
+          login:false,
+        })
       }
   }catch(error){
             res.json({
